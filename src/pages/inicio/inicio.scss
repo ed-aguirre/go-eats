@@ -1,0 +1,51 @@
+page-inicio {
+
+    .inicio{
+      color: white;
+      background-color: #2ecc71
+    }
+  
+    .splash-bg {
+        position: relative;
+        background: url('./../../assets/imgs/foodtopic.png') no-repeat transparent;
+        background-size: cover;
+        height: 45%;
+        z-index: 1;
+        background-repeat: repeat-x;
+        animation: banner 16s linear infinite;
+        //animation-direction: alternate;
+      }
+    
+      @keyframes banner {
+        from { background-position: left center; }
+        to { background-position: -496px center; }
+      }
+    
+      .splash-info {
+        position: relative;
+        z-index: 2;
+        margin-top: -64px;
+        text-align: center;
+      }
+      .splash-logo {
+        margin: auto;
+        background: url('../assets/imgs/applogo.png') repeat transparent;
+        background-size: 100%;
+        width: 128px;
+        height: 128px;
+      }
+      .splash-intro {
+        font-size: 18px;
+        font-weight: bold;
+        max-width: 80%;
+        margin: auto;
+      }
+      .fondo2{
+        background-color: #2ecc71;
+      }
+        h1{
+       color: #FFFF
+        }
+
+}
+

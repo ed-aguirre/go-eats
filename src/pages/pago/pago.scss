@@ -1,0 +1,27 @@
+page-pago {
+
+    .av{
+        border-radius: 50%;
+    }
+    .mid{
+        vertical-align: middle;
+    }
+
+    .contenedor{
+        position: relative;
+        display: inline-block;
+        text-align: center;
+    }
+
+    img.linea{
+        width: 300px;
+        height: 17px;
+    }
+    p.centrado{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+    }
+}

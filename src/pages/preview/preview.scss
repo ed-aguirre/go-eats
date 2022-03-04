@@ -1,0 +1,13 @@
+page-preview {
+
+    ion-content{
+         
+        background-color: rgba(0,0,0,0.85);
+        margin: 75px 50px 20px 30px; /* 15% from the top and centered */
+        padding: 80px;
+        //border-radius: 15px;
+        border: 1px solid #bebebe;
+        width: 319px; /* Could be more or less, depending on screen size */
+    }
+    
+}

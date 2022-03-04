@@ -1,0 +1,18 @@
+page-portipo {
+
+    ion-item.carta {
+        cursor: pointer;
+        outline: none;
+        color: black;
+        background-color: #FFF;
+        border: none;
+      }
+      
+      ion-item.carta:hover {background-color: #cacaca}
+      
+      div.ion-item:active {
+        background-color: #FFF;
+        transform: translateY(4px);
+      }
+
+}

@@ -1,0 +1,36 @@
+<ion-header>
+
+    <ion-navbar color='primary'>
+      <button ion-button menuToggle >
+        <ion-icon name="menu"></ion-icon>
+      </button>
+
+      <ion-searchbar #myinput
+      placeholder="Buscar" 
+      [showCancelButton]="shouldShowCancel" 
+      (ionInput)="buscar_platillo($event)" 
+      (ionCancel)="onCancel($event)">
+
+      </ion-searchbar>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item *ngIf="_pS.resultados.length == 0">
+    <P style="text-align: center">No se ha encontrado ningun elemento</P>
+  </ion-item>
+
+  <ion-list>
+    <ion-item class="carta" *ngFor="let item of _pS.resultados" 
+              [navPush]="PlatilloPage" 
+              [navParams]="{'id': item}">
+      <ion-avatar item-end>
+        <img [src]="item.codigo | imagenPipe">
+      </ion-avatar>
+      <h2>{{ item.nombre }}</h2>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

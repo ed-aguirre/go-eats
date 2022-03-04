@@ -1,0 +1,32 @@
+
+
+<ion-header>
+      <ion-navbar color="primary" >
+        <button ion-button menuToggle >
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title style= "text-align: center"> Go eats </ion-title>
+        
+          <ion-buttons end>
+            <button ion-button icon-only (click)="irCarrito()">
+              <ion-icon name="cart"></ion-icon>
+              <ion-badge class="carrito-numero" color="danger" *ngIf="_cs.elementos.length > 0">
+                {{_cs.elementos.length}}</ion-badge>
+              <!-- devuelve la longitud del arreglo, para ver cuantos items hay en el carro -->
+            </button>
+          </ion-buttons>
+
+      </ion-navbar>
+  </ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <button ion-item *ngFor="let cate of _pS.lineas" [navPush]= "PorCategorias"
+                [navParams]="{ 'id' : cate }">
+          {{ cate.tipo | titlecase }}
+          <ion-icon class="iconos"  [name]= "cate.icono" item-start></ion-icon>
+        </button> 
+      </ion-list>
+
+</ion-content>

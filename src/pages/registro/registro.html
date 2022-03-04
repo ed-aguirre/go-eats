@@ -1,0 +1,100 @@
+<ion-header >
+
+    <ion-navbar color="primary">
+      <ion-title >Registro</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content class="fondo2">
+   
+    <br>
+    <ion-icon name="person" class="cate" ></ion-icon>
+
+      
+        <ion-item class="fondo2">
+            <ion-label fixed>Nombre(s)</ion-label>
+            <ion-input 
+            type="text" [(ngModel)]='cuenta.nombre' name='nombre' maxlength='30'></ion-input>
+        </ion-item>
+
+        <ion-item class="fondo2">
+          <ion-label fixed>Primer Apellido </ion-label>
+          <ion-input
+          type="text" [(ngModel)]='cuenta.ap_P' name='ap_P' maxlength='30' >
+          </ion-input>
+        </ion-item>
+
+        <ion-item class="fondo2">
+          <ion-label fixed>Segundo Apellido </ion-label>
+          <ion-input
+          type="text" [(ngModel)]='cuenta.ap_M' name='ap_M' maxlength='30' >
+          </ion-input>
+        </ion-item>
+     
+
+      <br>
+      <ion-icon name="mail" class="cate" ></ion-icon>
+
+     
+        <ion-item class="fondo2">
+          <ion-label fixed>Correo Electronico</ion-label>
+          <ion-input 
+          type="email" [(ngModel)]="cuenta.correo" name="email" ></ion-input>
+        </ion-item>
+        
+        <ion-item class="fondo2">
+          <ion-label fixed>Contraseña</ion-label>
+          <ion-input 
+          type="password" [(ngModel)]="cuenta.contra" name="pass" ></ion-input>
+        </ion-item>
+      
+
+    <br>
+    <ion-icon name="home" class="cate" ></ion-icon>
+
+      
+        <ion-item class="fondo2">
+          <ion-label fixed>Ciudad</ion-label>
+          <ion-input 
+          type="text" [(ngModel)]="cuenta.ciudad" name="city" ></ion-input>
+        </ion-item>
+
+        <ion-item class="fondo2">
+          <ion-label fixed>Colonia</ion-label>
+          <ion-input 
+          type="text" [(ngModel)]="cuenta.colonia" name="col" ></ion-input>
+        </ion-item>
+
+        <ion-item class="fondo2">
+          <ion-label fixed>Calle</ion-label>
+          <ion-input 
+          type="text" [(ngModel)]="cuenta.calle" name="calle" ></ion-input>
+        </ion-item>
+
+        <ion-item class="fondo2">
+          <ion-label fixed>Número</ion-label>
+          <ion-input 
+          type="text" [(ngModel)]="cuenta.numero" name="number" ></ion-input>
+        </ion-item>
+
+        <ion-item class="fondo2">
+          <ion-label fixed>Código Postal</ion-label>
+          <ion-input 
+          type="text" [(ngModel)]="cuenta.cp" name="cp" ></ion-input>
+        </ion-item>
+      
+      
+      <div padding>
+        <button 
+        [disabled] = 'cuenta.correo.length < 10 || cuenta.contra.length < 6 
+        || cuenta.nombre.length <3 || cuenta.ap_P.length < 3
+        || cuenta.ap_M.length <3 || cuenta.ciudad.length <3
+        || cuenta.colonia.length <3 || cuenta.calle.length <3
+        || cuenta.numero.length < 1 || cuenta.cp.length <4 '
+        ion-button block round color="secondary"
+         (click)="doRegistro()">Registrar</button>
+      </div>
+   
+  </ion-content>

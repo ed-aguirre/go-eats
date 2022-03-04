@@ -1,0 +1,17 @@
++Solucion de errores comida-master ionic+
+
+//creo que esto soluciona todo:
+**usar ionic v3.20.1**
+1.-hacer npm i con node v11.15.0 (se puede hacer un downgrade con el programa nvm para windows)
+//https://github.com/coreybutler/nvm-windows/releases
+
+sino hacer esto tambien:
+2.- Instalar python27 en C:/Python27/
+
+3.- correr el comando npm install -g --production windows-build-tools --vs2015
+
+//backend: codeigniter 3
+1.- copy and paste all the controllers and folders to the codeIgniter framework
+2.- run composer update --no-scripts
+3.- agregar al proyecto en folder->config el archivo rest.php
+4.- app/config/database.php -> configurar la BD

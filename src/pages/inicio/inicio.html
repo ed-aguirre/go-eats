@@ -1,0 +1,33 @@
+<ion-content scroll="false" class="fondo2">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      <h1>Go
+        <b>eats</b>
+      </h1>
+    </div>
+  </div>
+  <div padding>
+
+    <ion-item class='inicio'>
+      <ion-icon name='mail' item-start></ion-icon>
+      <ion-label stacked>Correo Electrónico</ion-label>
+      <ion-input 
+      type="email" [(ngModel)]='Cuenta.correo' name='correo' maxlength='30'></ion-input>
+    </ion-item>
+
+    <ion-item class='inicio'>
+      <ion-icon name='key' item-start ></ion-icon>
+      <ion-label stacked>Contraseña</ion-label>
+      <ion-input 
+      type="password" [(ngModel)]='Cuenta.contra' name='contra' maxlength='30'></ion-input>
+    </ion-item>
+
+    <button [disabled] = 'Cuenta.correo.length < 10 || Cuenta.contra.length < 5'
+    ion-button block round color="secondary" (click)="inicioSes()">Iniciar Sesión </button>
+
+    <button ion-button block round color="light" (click)="registro()" >Registrarse </button>
+    
+  </div>
+</ion-content>

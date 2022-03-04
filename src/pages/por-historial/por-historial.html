@@ -1,0 +1,32 @@
+
+<ion-header>
+
+        <ion-navbar color='primary'>
+          <button ion-button menuToggle style='visibility: hidden'>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>Detalle del pedido</ion-title>
+        </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+    <p class="recibo">
+    <ion-icon name='calendar'></ion-icon>
+    Hecho el : {{orden.creado_en | date: 'd/MMM/yyyy ' }}
+    a las {{orden.creado_en | date :'h:mm a '}}
+    </p>
+  
+    <ion-list>
+        <ion-item  *ngFor="let item of orden_detalle">
+          <ion-avatar item-end>
+            <img [src]="item.codigo | imagenPipe">
+          </ion-avatar>
+          <h2>{{ item.nombre }}</h2>
+        </ion-item>
+      </ion-list>
+
+
+</ion-content>

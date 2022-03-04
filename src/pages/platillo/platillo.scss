@@ -1,0 +1,32 @@
+page-platillo {
+    #margen {
+        width: 100%;
+        background-color: rgb(240, 236, 236);
+        border-radius: 19px; 
+        
+    }
+    #barra1 {
+        
+        height: 18px;
+        background-color: #43a047;
+        border-radius: 20px;
+    }
+    #barra2 {
+        
+        height: 18px;
+        background-color: #1e88e5 ;
+        border-radius: 20px; 
+    }
+    #barra3 {
+       
+        height: 18px;
+        background-color: #d32f2f;
+        border-radius: 20px; 
+    }
+
+    p.porce{
+        text-align: center;
+        color:#FFFF;
+    }
+
+}

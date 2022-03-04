@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{menu.nombre}}</ion-title>
+
+      <ion-buttons end style="visibility: hidden">
+        <button ion-button icon-only color="dark">
+          <ion-icon name="cart"></ion-icon>
+          <ion-badge class="carrito-numero" color="danger">
+            1</ion-badge>
+
+        </button>
+      </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <img [src]="menu.codigo | imagenPipe" alt="">
+  <hr>
+  <div padding>
+
+    <div style=" text-align: justify">
+      <h5>Descripcion:</h5>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nesciunt magnam nulla aspernatur non corporis veniam atque sequi, unde adipisci aliquid ut minima nobis voluptas quis distinctio mollitia numquam dolorem.
+      <!-- {{menu.descripcion}} -->
+    </div>
+
+    <p>Carbohidratos:</p>
+    <div id="margen">
+      <div [ngStyle]="{width:(menu.carbo)}" id="barra1">
+        <p class="porce">{{menu.carbo}}</p>
+      </div>
+    </div>
+    <p>Lípidos:</p>
+    <div id="margen">
+      <div [ngStyle]="{width:(menu.lipidos)}" id="barra2">
+        <p class="porce">{{menu.lipidos}}</p>
+      </div>
+    </div>
+    <p>Grasas:</p>
+    <div id="margen">
+      <div [ngStyle]="{width:(menu.grasas)}" id="barra3">
+        <p class="porce">{{menu.grasas}}</p>
+      </div>
+    </div>
+    <br/>
+    <p style="text-align: center">
+      <em>{{menu.precio | currency: 'MXN':true}}</em>
+    </p>
+    
+    <ng-container *ngIf="menu.stock == 0">
+      <button ion-button block medium color="danger" disabled>
+        No disponible
+      </button>
+    </ng-container>
+
+    <ng-container *ngIf="menu.stock == 1">
+      <button ion-button block outline medium icon-left (click)="_cs.agregar_carrito( menu )">
+        <ion-icon name="add"></ion-icon>
+        Agregar al carrito
+      </button>
+    </ng-container>
+  </div>
+</ion-content>

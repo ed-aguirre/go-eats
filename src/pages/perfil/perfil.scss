@@ -1,0 +1,48 @@
+page-perfil {
+
+  p{
+    font-size: 15px;
+  }
+    
+    .splash-bg {
+        position: relative;
+        background: url('../assets/imgs/foodtopic.png') no-repeat transparent;
+        background-size: cover;
+        height: 45%;
+        z-index: 1;
+        background-repeat: repeat-x;
+        //animation: banner 15s linear infinite;
+        //animation-direction: alternate;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%)
+        opacity(60%);
+      }
+    
+      .splash-info {
+        position: relative;
+        z-index: 2;
+        margin-top: 12px;
+        text-align: center;
+      }
+      .splash-logo {
+        margin: auto;
+        background: url('../assets/imgs/Avatar_generico.png') transparent;
+        background-size: 100%;
+        width: 160px;
+        height: 110px;
+        border-radius: 20%;
+      }
+      .gocoin {
+        //margin: auto;
+        padding: 10px 0px 0px 0px ;
+        background: url('../assets/imgs/applogo.png') repeat transparent;
+        background-size: 100%;
+        width: 40px;
+        height: 40px;
+        filter: sepia(100%) saturate(5) contrast(80%)
+      }
+      p#puntos{
+        text-align: end;
+      }
+      
+}

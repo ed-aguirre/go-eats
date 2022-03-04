@@ -1,0 +1,64 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Confirmar pedido</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <!-- <ion-item *ngFor="let i of subtotal">
+
+    </ion-item> -->
+    <ion-grid *ngFor="let i of subtotal">
+      <ion-row>
+        <ion-col>
+          <ion-avatar item-end>
+            <img class='av' [src]="i.codigo | imagenPipe">
+          </ion-avatar>
+        </ion-col>
+        <ion-col >
+         <p class="mid">
+           {{i.nombre}}
+         </p>
+        </ion-col>
+        <ion-col>
+         <p class="mid">
+           {{ i.precio | currency:'MXN' }}
+         </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <hr>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col offset-4>
+          <p style="text-align: right">TOTAL:</p>
+        </ion-col>
+        <ion-col >
+          <p> {{ total | currency:'MXN' }} </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <button ion-button color='azul' block medium (click)='do_pedido()'>
+      Confirmar
+    </button>
+
+    <ion-item class='contenedor' no-lines>
+      <img class='linea'
+      src="../../assets/imgs/horizontal-line.png" 
+      alt="">
+      <p class='centrado'> &nbsp; O &nbsp;</p>
+    </ion-item>
+
+    <button ion-button color='amarillo' block medium (click)="ver_modal()">
+      Pagar con Gopoints
+    </button>
+
+</ion-content>

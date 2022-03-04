@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+      <!-- <ion-title>porCategoria</ion-title> -->
+      <ion-title> {{ categoria.tipo | titlecase }} </ion-title>
+
+      <ion-buttons end style="visibility: hidden">
+        <button ion-button icon-only color="dark">
+          <ion-icon name="cart"></ion-icon>
+          <ion-badge class="carrito-numero" color="danger">
+            1</ion-badge>
+
+        </button>
+      </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let item of _pS.por_cate">
+      <ion-item class="carta" [navPush]="PlatilloPage" [navParams]="{'id': item}">
+     
+        <ion-thumbnail item-start>
+          <img [src]="item.codigo | imagenPipe">
+        </ion-thumbnail>
+       
+        <h2>{{ item.nombre }}</h2>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary" (click)="_cs.agregar_carrito( item )">
+          <ion-icon name="add"></ion-icon>
+          Agregar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>

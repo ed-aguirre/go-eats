@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>GoPoints</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="close()">
+        Listo
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h3 style="text-align:center" >Puntos: </h3>
+        
+      </ion-col>
+      <ion-col>
+          <h3 id="puntos" [ngStyle]="{'color': puntos < 0 ? 'red' : 'black'}">  {{puntos}} </h3>
+      </ion-col>
+      <ion-col>
+          <div class="gocoin"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <p> ¿Qué platillos deseas pagar con tus puntos?</p>
+
+  <ion-list>
+      <ion-item *ngFor="let food of menu">
+          <ion-avatar item-start>
+              <img [src]="food.codigo | imagenPipe">
+            </ion-avatar>
+
+        <ion-label>{{food.nombre}}</ion-label>
+        <ion-toggle (ionChange)="update( $event, food.codigo)"></ion-toggle>
+      </ion-item>
+      
+    </ion-list>
+
+
+  <button ion-button block color="amarillo" [disabled]="puntos < 0">
+    Aceptar
+  </button>
+
+  <p class='aviso'>Si compras tus platillos con GoPoints, tus pedidos llegan más rápido 
+    y los platillos tienen sabores especiales
+  <ion-icon name="star"></ion-icon>
+</p>
+
+</ion-content>

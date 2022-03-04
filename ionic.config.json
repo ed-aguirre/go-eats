@@ -1,0 +1,8 @@
+{
+  "name": "comidafit",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "app_id": ""
+}

@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Carrito</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div text-center *ngIf="_cs.elementos.length == 0" class="carrito_vacio">
+    <ion-icon name="ios-cart-outline" class="icon_5x"></ion-icon>
+    <br>
+    <p class="text">Su carrito está vacío</p>
+  </div>
+
+  <div *ngIf="_cs.elementos.length != 0">
+
+    <ion-list>
+      <ion-item *ngFor="let lista of _cs.elementos; let i = index">
+        <ion-thumbnail item-start>
+          <img style="width:80px;height: 80px" [src]="lista.codigo | imagenPipe">
+        </ion-thumbnail>
+        <h2>{{lista.nombre}}</h2>
+        <button ion-button color="danger" outline block small
+                (click)= "borrar( i )">
+          Eliminar
+        </button>
+      </ion-item>
+    </ion-list>
+    
+    <button ion-button color="azul" block  
+            [navPush]='Pago' [navParams]="{'id':_cs.elementos}">
+          Realizar pedido
+    </button>
+  
+
+  </div>
+
+</ion-content>

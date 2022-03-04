@@ -1,0 +1,117 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Perfil</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+  </div>
+
+  <div padding>
+    <h4 style="text-align-last: center">
+      {{_us.user_data.nombre | titlecase}} {{_us.user_data.ap_P | titlecase}} {{_us.user_data.ap_M | titlecase}}
+    </h4>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-7>
+          <p>GoPoints:</p>
+        </ion-col>
+        <ion-col>
+              <p id='puntos'>{{_us.user_data.puntos}}</p>
+        </ion-col>
+        <ion-col>
+            <div class="gocoin"></div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-7>
+          <p>Ciudad:</p>
+        </ion-col>
+        <ion-col>
+          <p>{{_us.user_data.ciudad | titlecase }} </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-7>
+          <p>Calle:</p>
+        </ion-col>
+        <ion-col>
+          <p>{{_us.user_data.calle | titlecase }} </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-7>
+          <p>Colonia:</p>
+        </ion-col>
+        <ion-col>
+          <p>{{_us.user_data.colonia | titlecase }} </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-7>
+          <p>Número exterior:</p>
+        </ion-col>
+        <ion-col>
+          <p>#{{_us.user_data.numero }} </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-7>
+          <p>Código Postal:</p>
+        </ion-col>
+        <ion-col>
+          <p>{{_us.user_data.cp | titlecase }} </p>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-7>
+          <p>Subscripción:</p>
+        </ion-col>
+        <ion-col>
+          <p> {{ this.tipo_plan }} </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-7>
+          <p>Saldo:</p>
+        </ion-col>
+        <ion-col>
+          <p> {{ _us.user_data.wallet | currency: 'MXN':true }} </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-only clear>
+            <ion-icon name="logo-facebook"></ion-icon>
+          </button>
+          <button ion-button icon-only clear>
+            <ion-icon name="logo-twitter"></ion-icon>
+          </button>
+          <button ion-button icon-only clear>
+            <ion-icon name="logo-instagram"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+</ion-content>

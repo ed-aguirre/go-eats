@@ -1,0 +1,87 @@
+page-list {
+    .fondo-page {
+
+      ion-card.carta {
+        
+        //text-align: center; //quitale esto cuando lo vayas a copiar en la parte de categorias o buscar, porque lo centra da
+        cursor: pointer;
+       //outline: none;
+        // color: black;
+        // background-color: #FFF;
+        // border: none;
+        //sborder-radius: 15px;
+        //box-shadow: 0 9px #999;
+      }
+      
+      //ion-card.carta:hover {color: #dad6d6}
+      
+      ion-card.carta:active {
+        background-color: #FFF;
+        //box-shadow: 0px 5px #666;
+        transform: translateY(1px);
+      }
+
+        ion-card {
+          position: relative;
+          text-align: center;
+          cursor: pointer;
+          //outline: none;
+           color: black;
+           background-color: #FFF;
+           border: none;
+        }
+      
+        .card-title {
+        text-shadow: -1px -1px 1px #000, 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
+        //-webkit-text-fill-color: #fff;
+        //-webkit-text-stroke: 1px black;
+          position: absolute;
+          top: 36%;
+          font-size: 2.0em;
+          width: 100%;
+          font-weight: bold;
+          color: #fff;
+        }
+      
+        .card-subtitle {
+        text-shadow: -1px -1px 1px #000, 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
+          font-size: 0.9em;
+          position: absolute;
+          top: 59%;
+          width: 100%;
+          color: #fff;
+        }
+      
+      }
+
+    
+    .platillo{
+        margin-left: 40px;
+        width: 76%;
+        height: 145px;
+        border-radius: 5px;
+    }
+    
+    .segmento1{
+        font-size:18px;
+        //color: #f3562d
+    }
+    .segmento2{
+        font-size:18px
+    }
+    .fondo1{
+        background-color: #f19f34;
+    }
+    
+    //   ng-containerr:active {  //creo que este no hace nada... -->
+    //     background-color: #FFF;
+    //     //box-shadow: 0px 5px #666;
+    //     transform: translateY(4px);
+    //   }
+     
+
+    // .menu{
+    //     width: 46%;
+    //     height: 75px;
+    // }
+}

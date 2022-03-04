@@ -1,0 +1,53 @@
+<ion-header>
+      <ion-navbar color="primary">
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Planes</ion-title>
+      </ion-navbar>
+  </ion-header>
+
+
+<ion-content scroll="false">
+
+    <ion-card *ngFor="let plan of _us.planes" >
+      <div style="position: relative;">
+      <img class="fondo_medalla" src="../assets/imgs/foodtopic.png" alt="fondo">
+        <br>
+      <img class="medalla" [src]="plan.nombre | imagenPipe" alt="medalla">
+    </div>
+        <ion-card-content style="padding-top: 60px">
+          <br>
+          <ion-card-title>
+            {{ plan.nombre | titlecase }}
+          </ion-card-title>
+          <p style ="text-align: justify ">  {{plan.info}}   </p>
+        </ion-card-content>
+    
+        <ion-item>
+          <ion-icon name='restaurant' item-start style="color: #d03e84"></ion-icon>
+          Platillos
+          <ion-badge item-end> {{plan.id_plan}} </ion-badge>
+        </ion-item>
+    
+        <ion-item>
+          <ion-icon name='cash' item-start style="color: #2fa335"></ion-icon>
+          Precio*
+          <ion-badge item-end> {{plan.precio}} MXN </ion-badge>
+        </ion-item>
+        <p class= 'aviso' >*El pago de los paquetes es semanal</p>
+
+        <button ion-button block round medium [(disabled)]='bandera' color='azul'>
+          Adquirir plan
+        </button>
+    
+    </ion-card>
+
+    <br><br><br>
+        <div class="text">Iconos diseñados por <a href="https://www.flaticon.es/autores/pixel-buddha" 
+          title="Pixel Buddha">Pixel Buddha</a> desde <a href="https://www.flaticon.es/" title="Flaticon">
+            www.flaticon.com</a> con licencia <a href="http://creativecommons.org/licenses/by/3.0/" 
+            title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    
+   
+</ion-content>

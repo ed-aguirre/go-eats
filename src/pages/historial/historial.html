@@ -1,0 +1,68 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+      <button ion-button menuToggle >
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Pedidos</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+  <div text-center *ngIf="_us.ordenes.length == 0" class='carrito_vacio' >
+    <ion-icon name="time" class="icon_5x" ></ion-icon>
+    <br>
+    <p class="text">No tienes pedidos aún.</p>
+  </div>
+
+  <div *ngIf= "_us.ordenes.length != 0">
+
+  <ion-list>
+   <button ion-item *ngFor= "let orden of _us.ordenes; let i = index"
+          [navPush]= 'PorHistorialPage' [navParams]="{ 'id': orden }" icon-start >
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2>
+                 <ng-container [ngSwitch]="orden.status">
+                  <ion-icon *ngSwitchCase="0" [ngClass]="{'orden_icon0': orden.status == '0'}" name="clock"></ion-icon>
+                  <ion-icon *ngSwitchCase="1" [ngClass]="{'orden_icon1': orden.status == '1'}" name="car"> </ion-icon>
+                  <ion-icon *ngSwitchCase="2" [ngClass]="{'orden_icon2': orden.status == '2'}" name="basket"></ion-icon>
+                  <ion-icon *ngSwitchCase="3" [ngClass]="{'orden_icon3': orden.status == '3'}" name="basket"></ion-icon>
+                  <ion-icon *ngSwitchDefault  class='orden_icon0' name="help"></ion-icon>
+                </ng-container>
+                 
+              </ion-col>
+              <ion-col>
+                  Pedido {{i + 1}}
+
+                  <span [ngSwitch]="orden.status">
+                  <p *ngSwitchCase="0" class="orden_icon{{orden.status}}">
+                  Cocinando
+                  </p>
+                  <p *ngSwitchCase="1" class="orden_icon{{orden.status}}">
+                  En camino
+                  </p>
+                  <p *ngSwitchCase="2" class="orden_icon{{orden.status}}">
+                  Entregado
+                  </p>
+                  <p *ngSwitchCase="3" class="orden_icon{{orden.status}}">
+                  Cancelado
+                  </p>
+                  <p *ngSwitchDefault>
+                    Error
+                  </p>
+                  </span> 
+
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+   </button>
+  </ion-list>
+
+  </div>
+
+
+</ion-content>

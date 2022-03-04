@@ -1,0 +1,24 @@
+page-planes {
+
+    .aviso{
+        font-size: 12px;
+        color: #c4c4c4;
+        text-align: center;
+    }
+
+    .fondo_medalla{
+        position: absolute;
+        filter: opacity(20%) grayscale(90%)  blur(1px);
+        //filter:
+        z-index: 1;
+    }
+    .medalla{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        z-index: 2;
+        //margin-top: 20px;
+        margin: auto;
+        //background-size: 100%;
+    }
+}

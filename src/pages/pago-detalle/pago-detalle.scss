@@ -1,0 +1,27 @@
+page-pago-detalle {
+
+    .gocoin {
+        //margin: auto;
+        padding: 10px 0px 0px 0px ;
+        background: url('../assets/imgs/applogo.png') repeat transparent;
+        background-size: 100%;
+        width: 40px;
+        height: 40px;
+        filter: sepia(100%) saturate(5) contrast(80%)
+      }
+      
+      h3{
+        padding-top: 8px;
+      }
+      h3#puntos{
+        text-align: end;
+      }
+      
+      .aviso{
+        font-size: 12px;
+        color: #c4c4c4;
+        text-align: center;
+    }
+      
+
+}
